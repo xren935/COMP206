@@ -1,0 +1,69 @@
+a) 
+104kg
+364kg
+450kg
+1000kg
+1800kg
+4900kg
+29000kg
+110000kg
+I discovered this by grep -Eo '[0-9]{1,}kg' *.dat | sort -t: -n -k2 | cut -d ":" -f2
+#which grabs all the weights from .dat files, sort them by the weights, and then cut away the names (so that only the weights are left) 
+
+b) 
+24m
+13.5m
+6m
+5.15m
+4.5m
+4m
+2.1m
+2.0m
+I got this by running grep -Eo '[0-9]{1,}m' *.dat | sort -r -t: -n -k2 | cut -d ":" -f2
+#which follows the same logic as Question a, but sorts in reverse order. 
+
+c) 
+Elephant weights more
+I discovered this by running 
+find *.dat -name '*hippo*' > hippoName.txt
+#finding the hippo which should have a file name containing the string hippo
+hippo=$(cat hippoName.txt)
+#create a variable that saves the hippo’s name
+hippoWeight=$(grep -Eo '[0-9]{1,}kg' $hippo)
+#do the same name search for the elephant
+find *.dat -name '*elephant*' > elephantName.txt
+elephant=$(cat elephantName.txt)
+elephantWeight=$(grep -Eo '[0-9]{1,}kg' $elephant)
+#leave only the numbers, weights, of hippo and elephant. Cutting away the alphabets 
+hippoW=$(echo $hippoWeight | sed 's/[^0-9]*//g')
+elephantW=$(echo $elephantWeight | sed 's/[^0-9]*//g')
+if [ "$elephantW" -gt "$hippoW" ]
+> then echo "elephant weights more"
+> elif [ "$hippoW" -gt "$elephantW" ]
+> then echo "hippo weights more"
+> else echo "same weights"
+> fi
+elephant weights more
+
+# d) 
+I did this by running 
+#cut the oldHeight and the oldWeight out 
+#get rid of the alphabets, leaving only the numbers 
+#increment the weight by 2
+#put everything back into the dat file
+#first find the crocodile file
+oldH=$(cut -d ' ' -f2 $crocodile)
+oldW=$(cut -d ' ' -f1 $crocodile)
+oldW=$(echo $oldW | sed 's/[^0-9]*//g')
+newW=$(expr $oldW + 2)
+echo "${newW}kg $oldH" > crocodile.dat
+
+
+# e) remove giraffe 
+I did this by running 
+rm *giraffe* 
+#which simply removes everything containing giraffe in its name 
+
+
+
+
