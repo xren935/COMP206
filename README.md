@@ -2,7 +2,7 @@
 This repository contains my solutions to the homework assignments of COMP206(Fall 2018). \
 I enjoyed the course and learned a lot. Hope you like it too! \
 **ALL questions and starter code are provided by the awesome course instructors, so all credits go to them!** \
-In Assignment4 we added filters to photos. Below is an image of dear Professor Dave. 
+In Assignment4 we added filters to photos. Below is an image of dear Professor Dave. \
 ![Dear Professor Dave](profdave-assignment4.png)
 
 ## Assignment 1 
