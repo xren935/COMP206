@@ -2,7 +2,7 @@
 This repository contains my solutions to the homework assignments of COMP206(Fall 2018). \
 I enjoyed the course and learned a lot. Hope you like it too! \
 **ALL questions and starter code are provided by the awesome course instructors, so all credits go to them!** \
-![Dear Professor Dave](./profdav-assignment4.png)
+![Dear Professor Dave](profdave-assignment4.png)
 
 ## Assignment 1 
 Bash commands (to search, sort, join files) \
